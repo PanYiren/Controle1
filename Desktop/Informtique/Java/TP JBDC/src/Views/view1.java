@@ -8,11 +8,17 @@ import java.sql.SQLException;
 public class view1 {
     public void showView(ResultSet resul) throws SQLException {
         try {
-            System.out.println("Test: ");
+            System.out.println("Liste salariés embauchés avant 2008-05-05");
             while (resul.next()){
-                String numCat = resul.getString("id");
-                String nomCat = resul.getString("libelle");
-                System.out.println("Numero id: " + numCat + "\t\t" + "Libelle: " + nomCat);
+                String id = resul.getString("id");
+                String numSecu = resul.getString("numSecu");
+                String nom = resul.getString("nom");
+                String prenom = resul.getString("prenom");
+                String dateNaiss = resul.getString("dateNaiss");
+                String dateEnbauche = resul.getString("dateEmbauche");
+                String tel = resul.getString("tel");
+                String mail = resul.getString("mel");
+                System.out.println("Numero id: " + id + "\n" + "Numéro de sécurité: " + numSecu + "\n" + "Nom: " + nom + "\n" + "Prénom: " + prenom + "\n"+ "Date de naissance" + dateNaiss + "\n" + "Date d'embauche" + dateEnbauche + "\n" + "Téléphone: " + tel + "\n" + "Mail: " + mail + "\n");
             }
 
         }
