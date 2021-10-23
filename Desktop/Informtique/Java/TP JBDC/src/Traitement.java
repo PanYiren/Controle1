@@ -31,13 +31,16 @@ public class Traitement {
                 controllers3.Requete();
                 break;
             case 4:
-                System.out.println("4");
+                Controller4 controllers4 = new Controller4();
+                controllers4.Requete();
                 break;
             case 5:
-                System.out.println("5");
+                Controller5 controller5 = new Controller5();
+                controller5.Requete();
                 break;
             case 6:
-                System.out.println("6");
+                Controller6 controller6 = new Controller6();
+                controller6.Requete();
                 break;
             case 7:
                 System.exit(0);

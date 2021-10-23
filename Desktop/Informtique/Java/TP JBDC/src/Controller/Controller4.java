@@ -3,6 +3,7 @@ package Controller;
 import Modeles.Modele;
 import Modeles.Repository;
 import Views.view3;
+import Views.view4;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -11,8 +12,8 @@ import java.sql.Statement;
 import java.util.Properties;
 import java.util.Scanner;
 
-public class Controller3 {
-    public void Requete() throws SQLException{
+public class Controller4 {
+    public void Requete() throws SQLException {
         Statement statement = null;
         ResultSet result = null;
         Properties props = new Properties();
@@ -23,14 +24,11 @@ public class Controller3 {
         Connection conn = null;
         try {
             conn = Modele.Connexion(url, user, password);
-            view3 vue = new view3();
+            view4 vue = new view4();
             Repository repository = new Repository(statement);
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("Entrer le nom de salarié: ");
-            String nom = scanner.next();
-            String req = "SELECT * FROM contrat c inner join salarie s on c.idSal = s.id where nom = '" + nom + "'";
+            String req = "SELECT COUNT(*) AS Nombre FROM poste";
             result = repository.requete(conn, req);
-            vue.showView(result, nom);
+            vue.showView(result);
         }
         catch (SQLException se){
             se.getMessage();

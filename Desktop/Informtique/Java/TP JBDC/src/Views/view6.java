@@ -1,14 +1,12 @@
 package Views;
 
-import Modeles.Repository;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class view1 {
+public class view6 {
     public void showView(ResultSet resul) throws SQLException {
         try {
-            System.out.println("Liste salariés embauchés avant 2008-05-05");
+            System.out.println("\nSalarié enregistrer: ");
             while (resul.next()){
                 String id = resul.getString("id");
                 String numSecu = resul.getString("numSecu");

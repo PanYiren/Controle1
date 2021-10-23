@@ -24,4 +24,14 @@ public class Repository {
         }
         return this.resul;
     }
+
+    public void Insert(Connection connection, String req){
+        try {
+            this.stat = (Statement) connection.createStatement();
+            stat.executeUpdate(req);
+        }
+        catch (SQLException se){
+            System.out.println(se.getMessage());
+        }
+    }
 }

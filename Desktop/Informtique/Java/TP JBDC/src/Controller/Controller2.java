@@ -31,5 +31,6 @@ public class Controller2 {
         catch (SQLException se){
             se.getMessage();
         }
+        conn.close();
     }
 }
